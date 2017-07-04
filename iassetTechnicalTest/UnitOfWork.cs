@@ -16,7 +16,6 @@ namespace iassetTechnicalTest
         {
             _serviceAddress = serviceAddress;
             _operationTimeOut = operationTimeOut;
-
         }
 
         public IGWSoapServiceClient GWSoapServiceClient

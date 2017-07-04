@@ -1,0 +1,123 @@
+﻿<div ng-app="myapp" class="mt30">
+    <div ng-controller="WeatherCtrl">
+        <div class="container">
+            <form class="form-horizontal container" role="form">
+
+
+                <div class="form-group">
+                    <div class="col-sm-11">
+                        <label class="control-label alert-danger">{{ErrorMsg}}</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>
+                        <label class="col-sm-5 control-label">Enter Country</label>
+                    </h3>
+                    <div class="col-sm-6">
+                        <input type="text" id="idCountry" class="form-control"
+                               name="nameCountry" ng-model="Country" placeholder="Enter Country"/>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-lg">
+                    <span class="btn btn-success margin-right-btn" ng-click="GetCitiesByCountryName()">
+                        <i class="btn-link"></i> {{btnText}}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h3>
+                        <label class="col-sm-5 control-label">Select City</label>
+                    </h3>
+                    <div class="col-sm-6">
+                        <select class="form-control" ng-model="dataModel" ng-change="GetWeatherByCountryNameAndCityName()" ng-options="item.City for item in cities">
+                            <option value="">---Please select---</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div id="weatherReport" ng-show="dataModel">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            <h3>
+                                <label class="control-label">Weather report</label>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Location</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Location}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Time</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Time}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Wind</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Wind}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Visibility</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Visibility}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">SkyConditions</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{SkyConditions}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Temperature</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Temperature}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">DewPoint</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{DewPoint}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">RelativeHumidity</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{RelativeHumidity}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            <label class="col-sm-5 control-label">Pressure</label>
+                        </h3>
+                        <div class="col-sm-6">
+                            <label class="col-sm-5 control-label">{{Pressure}}</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

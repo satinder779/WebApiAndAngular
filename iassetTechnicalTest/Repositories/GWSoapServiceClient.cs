@@ -26,7 +26,9 @@ namespace iassetTechnicalTest.Repositories
                 );
             try
             {
-                return serviceClient.GetWeather(cityName, countryName);
+                var weatherReport= serviceClient.GetWeather(cityName, countryName);
+                serviceClient.Close();
+                return weatherReport;
             }
             catch (Exception ex)
             {
@@ -44,7 +46,9 @@ namespace iassetTechnicalTest.Repositories
                 );
             try
             {
-                return serviceClient.GetCitiesByCountry(countryName);
+                var cities= serviceClient.GetCitiesByCountry(countryName);
+                serviceClient.Close();
+                return cities;
             }
             catch (Exception ex)
             {
